@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<style>
+body {
+	font-family:Verdana, Geneva, sans-serif;
+	background-color:#C90;
+}
+button {
+	height:70px;
+	width:200px;
+	border:none;
+	border-radius:60px;
+}
+
+.menu {
+	padding:50px;
+}
+
+
+.menu h1 {
+	color:#666;
+}
+
+.menu p {
+	color:#CCC;
+}
+</style>
+
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+<center>
+<button ng-click="myFunc()">Click Here To Show Content</button>
+</center>
+
+<div ng-show="showMe">
+<div class="menu">
+    <h1>Content Heading</h1>
+    <p> Here will be the paragraph. Here will be the paragraph. Here will be the paragraph. Here will be the paragraph. Here will be the paragraph. Here will be the paragraph. Here will be the paragraph. Here will be the paragraph. Here will be the paragraph. Here will be the paragraph. Here will be the paragraph. Here will be the paragraph. Here will be the paragraph. Here will be the paragraph. Here will be the paragraph. Here will be the paragraph. Here will be the paragraph.</p>
+</div>
+</div>
+
+</div>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.showMe = false;
+    $scope.myFunc = function() {
+        $scope.showMe = !$scope.showMe;
+    }
+});
+</script>
+
+</body>
+</html>
